@@ -1,6 +1,9 @@
 package com.likelion.study.service;
 
 import com.likelion.study.dao.UserRepository;
+import com.likelion.study.domain.User;
+import com.likelion.study.dto.UserReq;
+import com.likelion.study.dto.UserRes;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,4 +11,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserService {
 	private final UserRepository userRepository;
+
+	public UserRes save(UserReq request) {
+		User user = request.toEntity();
+
+		return UserRes.fromEntity(user);
+	}
 }

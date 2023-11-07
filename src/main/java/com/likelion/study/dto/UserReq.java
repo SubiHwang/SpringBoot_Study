@@ -1,18 +1,21 @@
 package com.likelion.study.dto;
 
+import com.likelion.study.domain.RoleType;
 import com.likelion.study.domain.User;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 public class UserReq {
 	private String name;
 	private String email;
 	private String password;
 	private String address;
+
+	private RoleType roleType;
 
 	@Builder
 	private UserReq(String name, String email, String password, String address) {
@@ -28,6 +31,7 @@ public class UserReq {
 				.email(email)
 				.password(password)
 				.address(address)
+				.roleType(RoleType.USER)
 				.build();
 	}
 
