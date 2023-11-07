@@ -2,7 +2,9 @@ package com.likelion.study.dto;
 
 import com.likelion.study.domain.User;
 import lombok.Builder;
+import lombok.Getter;
 
+@Getter
 public class UserRes {
 	private Long id;
 	private String name;
