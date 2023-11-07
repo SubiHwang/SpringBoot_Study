@@ -33,11 +33,23 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private RoleType roleType;
 
+	@Builder //빌더 패턴 생성자가 만들어진다.
 	public User(String name, String email, String password, String address, RoleType roleType) {
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.address = address;
 		this.roleType = roleType;
+	}
+
+	@Override public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", address='" + address + '\'' +
+				", roleType=" + roleType +
+				'}';
 	}
 }
